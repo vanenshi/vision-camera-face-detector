@@ -14,10 +14,10 @@ public class VisionCameraFaceDetector: FrameProcessorPlugin {
     
     static var FaceDetectorOption: FaceDetectorOptions = {
         let option = FaceDetectorOptions()
-        option.contourMode = .all
-        option.classificationMode = .all
-        option.landmarkMode = .all
-        option.performanceMode = .accurate // doesn't work in fast mode!, why?
+        option.contourMode = .none
+        option.classificationMode = .none
+        option.landmarkMode = .none
+        option.performanceMode = .fast // doesn't work in fast mode!, why?
         return option
     }()
     
@@ -111,8 +111,7 @@ public class VisionCameraFaceDetector: FrameProcessorPlugin {
         image.orientation = .up
         
         var faceAttributes: [Any] = []
-        
-        
+           
         do {
             let faces: [Face] =  try faceDetector.results(in: image)
             if (!faces.isEmpty){
