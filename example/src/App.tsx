@@ -1,31 +1,50 @@
 import * as React from 'react';
-
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-vision-camera-face-detector';
+import { StyleSheet } from 'react-native';
+import {
+  Camera,
+  useCameraDevice,
+  useFrameProcessor,
+} from 'react-native-vision-camera';
+import { scanFaces, type Face } from 'vision-camera-face-detector';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [hasPermission, setHasPermission] = React.useState(false);
+  const [faces, _] = React.useState<Face[]>([]);
+
+  const device = useCameraDevice('front');
 
   React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+    console.log(faces);
+  }, [faces]);
+
+  React.useEffect(() => {
+    (async () => {
+      const status = await Camera.requestCameraPermission();
+      setHasPermission(status === 'granted');
+    })();
   }, []);
 
-  return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
-  );
-}
+  // const frameProcessor = useFrameProcessor((frame) => {
+  //   'worklet';
+  //   const scannedFaces = scanFaces(frame);
+  //   runOnJS(setFaces)(scannedFaces);
+  // }, []);
+  const frameProcessor = useFrameProcessor((frame) => {
+    'worklet';
+    // console.log(
+    //   `${frame.timestamp}: ${frame.width}x${frame.height} ${frame.pixelFormat} Frame (${frame.orientation})`
+    // );
+    const scannedFaces = scanFaces(frame);
+    console.log(`Detected ${scannedFaces?.length} faces!`);
+    // setFaces(scannedFaces);
+  }, []);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});
+  return device != null && hasPermission ? (
+    <Camera
+      style={StyleSheet.absoluteFill}
+      device={device}
+      isActive={true}
+      frameProcessor={frameProcessor}
+    />
+  ) : null;
+}
