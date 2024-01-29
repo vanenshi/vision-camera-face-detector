@@ -26,7 +26,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-vision-camera-face-detector-example",
+    "example": "yarn workspace vision-camera-face-detector-example",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
@@ -41,14 +41,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vanenshi/react-native-vision-camera-face-detector.git"
+    "url": "git+https://github.com/vanenshi/vision-camera-face-detector.git"
   },
-  "author": "Amir Hossein Shekari <vanenshi@gmail.com> (https://github.com/vanenshi)",
+  "author": "Vanenshi <vanenshi@gmail.com> (https://github.com/vanenshi)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vanenshi/react-native-vision-camera-face-detector/issues"
+    "url": "https://github.com/vanenshi/vision-camera-face-detector/issues"
   },
-  "homepage": "https://github.com/vanenshi/react-native-vision-camera-face-detector#readme",
+  "homepage": "https://github.com/vanenshi/vision-camera-face-detector#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -71,8 +71,6 @@
     "react": "18.2.0",
     "react-native": "0.73.2",
     "react-native-builder-bob": "^0.20.0",
-    "react-native-vision-camera": "^3.8.1",
-    "react-native-worklets-core": "^0.2.4",
     "release-it": "^15.0.0",
     "turbo": "^1.10.7",
     "typescript": "^5.0.2"
@@ -82,9 +80,7 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*",
-    "react-native-vision-camera": ">=3.8.0",
-    "react-native-worklets-core": ">=0.2.4"
+    "react-native": "*"
   },
   "workspaces": [
     "example"

@@ -10842,27 +10842,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-vision-camera-face-detector-example@workspace:example":
-  version: 0.0.0-use.local
-  resolution: "react-native-vision-camera-face-detector-example@workspace:example"
-  dependencies:
-    "@babel/core": ^7.20.0
-    "@babel/preset-env": ^7.20.0
-    "@babel/runtime": ^7.20.0
-    "@react-native/babel-preset": 0.73.19
-    "@react-native/metro-config": 0.73.3
-    "@react-native/typescript-config": 0.73.1
-    babel-plugin-module-resolver: ^5.0.0
-    pod-install: ^0.1.0
-    react: 18.2.0
-    react-native: 0.73.2
-    react-native-reanimated: ^3.6.2
-    react-native-vision-camera: ^3.8.2
-    react-native-worklets-core: ^0.2.4
-  languageName: unknown
-  linkType: soft
-
-"react-native-vision-camera@npm:^3.8.1, react-native-vision-camera@npm:^3.8.2":
+"react-native-vision-camera@npm:^3.8.2":
   version: 3.8.2
   resolution: "react-native-vision-camera@npm:3.8.2"
   peerDependencies:
@@ -12941,6 +12921,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vision-camera-face-detector-example@workspace:example":
+  version: 0.0.0-use.local
+  resolution: "vision-camera-face-detector-example@workspace:example"
+  dependencies:
+    "@babel/core": ^7.20.0
+    "@babel/preset-env": ^7.20.0
+    "@babel/runtime": ^7.20.0
+    "@react-native/babel-preset": 0.73.19
+    "@react-native/metro-config": 0.73.3
+    "@react-native/typescript-config": 0.73.1
+    babel-plugin-module-resolver: ^5.0.0
+    pod-install: ^0.1.0
+    react: 18.2.0
+    react-native: 0.73.2
+    react-native-reanimated: ^3.6.2
+    react-native-vision-camera: ^3.8.2
+    react-native-worklets-core: ^0.2.4
+  languageName: unknown
+  linkType: soft
+
 "vision-camera-face-detector@workspace:.":
   version: 0.0.0-use.local
   resolution: "vision-camera-face-detector@workspace:."
@@ -12963,16 +12963,12 @@ __metadata:
     react: 18.2.0
     react-native: 0.73.2
     react-native-builder-bob: ^0.20.0
-    react-native-vision-camera: ^3.8.1
-    react-native-worklets-core: ^0.2.4
     release-it: ^15.0.0
     turbo: ^1.10.7
     typescript: ^5.0.2
   peerDependencies:
     react: "*"
     react-native: "*"
-    react-native-vision-camera: ">=3.8.0"
-    react-native-worklets-core: ">=0.2.4"
   languageName: unknown
   linkType: soft
 

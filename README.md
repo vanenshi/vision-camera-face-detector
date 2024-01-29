@@ -4,12 +4,13 @@ VisionCamera Frame Processor Plugin to detect faces using MLKit Vision Face Dete
 
 ## Installation
 
+```sh
+npm install vision-camera-face-detector
+```
+
 ## Usage
 
-# TODO
 
-- [ ] support android
-- [ ] pass the configure from js to native side
 
 ## Contributing
 
