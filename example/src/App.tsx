@@ -35,7 +35,7 @@ export default function App() {
 
   const frameProcessor = useFrameProcessor((frame) => {
     'worklet';
-    runAtTargetFps(30, () => {
+    runAtTargetFps(2, () => {
       'worklet';
       var startTime = performance.now();
       const scannedFaces = scanFaces(frame);
@@ -43,6 +43,7 @@ export default function App() {
       console.log(
         `Call to doSomething took ${endTime - startTime} milliseconds`
       );
+      console.log(scannedFaces);
 
       const xFactor = dimensions.width / frame.width;
       const yFactor = dimensions.height / frame.height;
@@ -84,6 +85,7 @@ export default function App() {
           device={device}
           isActive={true}
           frameProcessor={frameProcessor}
+          pixelFormat="yuv"
         />
       ) : null}
 
