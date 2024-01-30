@@ -35,20 +35,20 @@ export default function App() {
 
   const frameProcessor = useFrameProcessor((frame) => {
     'worklet';
-    runAtTargetFps(2, () => {
+    runAtTargetFps(1, () => {
       'worklet';
       var startTime = performance.now();
       const scannedFaces = scanFaces(frame);
       var endTime = performance.now();
-      console.log(
-        `Call to doSomething took ${endTime - startTime} milliseconds`
+      console.info(
+        `Call to doSomething took ${endTime - startTime} milliseconds
+And return ${scannedFaces.length} faces`
       );
-      console.log(scannedFaces);
 
       const xFactor = dimensions.width / frame.width;
       const yFactor = dimensions.height / frame.height;
 
-      console.log(scannedFaces[0]?.bounds);
+      if (scannedFaces[0]) console.log(scannedFaces[0]?.bounds);
 
       updateFace(
         scannedFaces?.[0] && {

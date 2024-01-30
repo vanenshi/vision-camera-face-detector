@@ -40,5 +40,12 @@ export function scanFaces(frame: Frame): Face[] {
   if (plugin == null) {
     throw new Error('Failed to load Frame Processor Plugin!');
   }
-  return plugin.call(frame) as unknown as Face[];
+  var faces = plugin.call(frame) as Record<string, any>;
+
+  if (!Array.isArray(faces)) {
+    console.warn('Native frame processor failed to return a proper array!');
+    return [];
+  }
+
+  return faces.map((face) => face);
 }
