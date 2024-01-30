@@ -1,15 +1,8 @@
-# vision-camera-face-detector
+# vision-camera-face-detector [WIP]
 
 VisionCamera Frame Processor Plugin to detect faces using MLKit Vision Face Detector
 
-## Installation
-
-```sh
-npm install vision-camera-face-detector
-```
-
-## Usage
-
+NOTE: This library is under development, and will not work on the android because of [#issue-1891](https://github.com/mrousavy/react-native-vision-camera/issues/1891) issues
 
 
 ## Contributing
