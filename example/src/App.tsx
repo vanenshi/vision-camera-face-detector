@@ -20,7 +20,7 @@ export default function App() {
   const [hasPermission, setHasPermission] = React.useState(false);
   const face = useSharedValue<Face | undefined>(undefined);
 
-  const device = useCameraDevice('front');
+  const device = useCameraDevice('back');
 
   React.useEffect(() => {
     (async () => {
